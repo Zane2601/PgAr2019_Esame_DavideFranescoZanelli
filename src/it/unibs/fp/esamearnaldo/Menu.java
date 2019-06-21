@@ -7,20 +7,20 @@ import it.unibs.fp.mylib.*;
 
 public class Menu {
 	
-	private static final String SCELTE_4 = "puoi andare in una caverna(casella 5) o in un fiume(casella 6)";
-	private static final String CASELLA_5 = "Entriamo in una caverna\n ";
-	private static final String FINALE_PERDENTE = "Attraversi il bosco in fiamme e perdi tutta la tua vita.\n";
-	private static final String FINALE_VITTORIOSO = "La strada ti porta alla via per la felicità: complimenti, ce l'hai fatta!\n";
-	private static final String CASELLA_6 = "Attraversiamo il fiume a nuoto, schivando i piranha.";
-	private static final String FINALE_ORSO = "Entri nella caverna: c'è un orso. Hai appena guadagnato un punto vita, ma l'orso ti mangia. Ti aspettavi un happy ending? Comunque hai vinto, sei arrivato alla fine.";
-	private static final String CASELLA_4 = "Vediamo un pò cosa c'è in questo boschetto... (casella 4)\n";
-	private static final String CASELLA_3 = "Ti sei accorto di aver sbagliato via poco fa? Ora sei nella casella 3\n";
-	private static final String SCELTE_2 = "Da qui puoi andare alle caselle 0, 3, 4\n";
-	private static final String CASELLA_2 = "Molto bene : un altro svincolo. Che facciamo?\n";
-	private static final String SCELTE_1 = "Da qui puoi andare alle caselle 2, 3\n";
-	private static final String CASELLA_1 = "Ora sei nella casella numero 1, sei arrivato ad uno svincolo congratulazioni!\n";
-	private static final String TITOLO_MENU = "inizia la tua avventura";
-	private static final String[] VOCI_MENU = {
+	private static final String SCELTE_4 = "puoi andare in una caverna(casella 5) o in un fiume(casella 6)"; //possibili scelte della casela 4
+	private static final String CASELLA_5 = "Entriamo in una caverna\n "; //frase iniziale casella 5
+	private static final String FINALE_PERDENTE = "Attraversi il bosco in fiamme e perdi tutta la tua vita.\n"; //frase del finale in cui si muore
+	private static final String FINALE_VITTORIOSO = "La strada ti porta alla via per la felicità: complimenti, ce l'hai fatta!\n"; // frase del finale in cui si giunge alla fine del percorso vivi
+	private static final String CASELLA_6 = "Attraversiamo il fiume a nuoto, schivando i piranha."; //presentazione casella 6
+	private static final String FINALE_ORSO = "Entri nella caverna: c'è un orso. Hai appena guadagnato un punto vita, ma l'orso ti mangia. Ti aspettavi un happy ending? Comunque hai vinto, sei arrivato alla fine."; // frase del finale con la morte a causa di un orso
+	private static final String CASELLA_4 = "Vediamo un pò cosa c'è in questo boschetto... (casella 4)\n"; //frase presentazione casella 4
+	private static final String CASELLA_3 = "Ti sei accorto di aver sbagliato via poco fa? Ora sei nella casella 3\n"; //frase presentazione casella 3
+	private static final String SCELTE_2 = "Da qui puoi andare alle caselle 0, 3, 4\n"; //scelte della casella 2
+	private static final String CASELLA_2 = "Molto bene : un altro svincolo. Che facciamo?\n"; //frase presentazione casella 2
+	private static final String SCELTE_1 = "Da qui puoi andare alle caselle 2, 3\n"; //scelte possibili dalla casella 1
+	private static final String CASELLA_1 = "Ora sei nella casella numero 1, sei arrivato ad uno svincolo congratulazioni!\n"; //frase presentazione casella 1
+	private static final String TITOLO_MENU = "inizia la tua avventura";  //Incipit del menu
+	private static final String[] VOCI_MENU = {                  //differenti voci del menu iniziale
 			"Inizia partita"
 	};
 	
@@ -30,9 +30,9 @@ public class Menu {
 	
     //menu di inizio gioco in cui il giocatore può decidere di avviare la partita
 	public void mostraMenu() {
-		int scelta;
-		int i=0;
-		MyMenu menu = new MyMenu(TITOLO_MENU, VOCI_MENU);
+		int scelta;   //variabili neessaria per girare i diversi casi del menu
+		int i=0;     //variabile utilizzate per inserire le scelte dell'utente
+		MyMenu menu = new MyMenu(TITOLO_MENU, VOCI_MENU);     
 		do {
 			scelta=menu.scegli();
 			switch(scelta) {
