@@ -2,10 +2,15 @@ package it.unibs.fp.esamearnaldo;
 
 import java.io.FileInputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamReader;
+
+import it.unibs.fp.lerovineperdute.Citta;
 
 
 
@@ -135,5 +140,24 @@ public class Lettore {
 			
 		}
 	}
+	
+	
+	//metodo per creare un hashmap da cui ricavare i dati delle caselle
+	public static HashMap creaHashMap(ArrayList<Casella> listaCasella) {
+		 HashMap<Integer, String> mappa = new HashMap<>();
+		 for (int k = 0; k < listaCasella.size(); k++) {
+			mappa.put(listaCasella.get(k).getId(), listaCasella.get(k).getId());
+		}
+		 Iterator<Map.Entry<Integer, String>> it = mappa.entrySet().iterator();
+		 while (it.hasNext()) {
+			Map.Entry<Integer, String> e = it.next();
+			System.out.println(e.getKey()+ " = "+ e.getValue());
+		}
+		 for (int k = 0; k < listaCasella.size(); k++) {
+			System.out.println(listaCasella.get(k)+ " è collegata alla "+listaCasella.get(k).getDestinazione());
+		}
+		 
+		 return mappa;
+	 }
 
 }
